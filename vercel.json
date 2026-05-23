@@ -1,0 +1,19 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "vite build",
+  "outputDirectory": "dist/public",
+  "installCommand": "npm install",
+  "framework": null,
+  "functions": {
+    "api/auth/check.ts": { "includeFiles": "api/lib/**" },
+    "api/investments/index.ts": { "includeFiles": "api/lib/**" },
+    "api/investments/[id]/index.ts": { "includeFiles": "api/lib/**" },
+    "api/investments/[id]/rounds.ts": { "includeFiles": "api/lib/**" },
+    "api/rounds/[id].ts": { "includeFiles": "api/lib/**" },
+    "api/seed.ts": { "includeFiles": "api/lib/**" }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ]
+}
