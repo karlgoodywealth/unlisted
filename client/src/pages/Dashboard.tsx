@@ -29,8 +29,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Plus, Trash2, Sun, Moon, ChevronRight } from "lucide-react";
-import { useTheme } from "@/lib/theme";
+import { Plus, Trash2, ChevronRight } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { useToast } from "@/hooks/use-toast";
 import {
@@ -943,7 +942,6 @@ function EmptyState() {
 
 // --------- Header ---------
 function Header() {
-  const { theme, toggle } = useTheme();
   return (
     <header className="border-b border-border bg-background/95 backdrop-blur sticky top-0 z-20">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 h-14 sm:h-16 flex items-center justify-between gap-3">
@@ -959,15 +957,6 @@ function Header() {
             </div>
           </div>
         </div>
-        <button
-          type="button"
-          data-testid="button-theme-toggle"
-          onClick={toggle}
-          aria-label="Toggle theme"
-          className="shrink-0 h-11 w-11 sm:h-10 sm:w-10 inline-flex items-center justify-center rounded-md border border-border hover-elevate text-muted-foreground"
-        >
-          {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
-        </button>
       </div>
     </header>
   );
